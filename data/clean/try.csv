@@ -1,147 +1,147 @@
 name,pop,code
-Algeria,26.99,DZA
-Benin,64.09,BEN
-Botswana,15.73,BWA
-Burundi,57.28,BDI
-Cameroon,18.24,CMR
-Central African Republic,53.27,CAF
-Congo,32.1,COG
-Egypt,37.39,EGY
-Gabon,19.19,GAB
-Gambia,72.7,GMB
-Ghana,35.33,GHA
-Cote dIvoire,46.95,CIV
-Kenya,26.48,KEN
-Lesotho,15.69,LSO
-Liberia,55.8,LBR
-Malawi,29.61,MWI
-Mali,81.37,MLI
-Mauritania,44.58,MRT
-Mauritius,6.63,MUS
-Morocco,50.89,MAR
-Mozambique,74.6,MOZ
-Niger,78.16,NER
-Rwanda,53.2,RWA
-Senegal,65.26,SEN
-Sierra Leone,65.14,SLE
-South Africa,7.82,ZAF
-Sudan,55.73,SDN
-Swaziland,44.82,SWZ
-United Republic of Tanzania,26.09,TZA
-Togo,49.84,TGO
-Tunisia,26.83,TUN
-Uganda,20.7,UGA
-Democratic Republic of the Congo,44.18,COD
-Zambia,18.42,ZMB
-Zimbabwe,8.51,ZWE
-Barbados,0.02,BRB
-Canada,0.58,CAN
-Costa Rica,5.48,CRI
-Dominican Rep.,10.8,DOM
-El Salvador,4.22,SLV
-Guatemala,31.24,GTM
-Haiti,35.12,HTI
-Honduras,18.72,HND
-Jamaica,5.21,JAM
-Mexico,9.34,MEX
-Nicaragua,23.14,NIC
-Panama,8.14,PAN
-Trinidad and Tobago,1.32,TTO
-USA,0.39,USA
-Argentina,1.12,ARG
-Bolivia,13.53,BOL
-Brazil,12.37,BRA
-Chile,2.95,CHL
-Colombia,7.93,COL
-Ecuador,10.63,ECU
-Guyana,5.29,GUY
-Paraguay,4.49,PRY
-Peru,6.84,PER
-Uruguay,1.62,URY
-Venezuela,6.62,VEN
-Afghanistan,66.02,AFG
-Bahrain,31.7,BHR
-Bangladesh,41.99,BGD
-Myanmar,21.72,MMR
-China,6.59,CHN
-"China, Hong Kong Special Administrative Region",6.28,HKG
-India,42.29,IND
-Indonesia,9.47,IDN
-Iran (Islamic Republic of),16.82,IRN
-Iraq,28.09,IRQ
-Israel,3.05,ISR
-Japan,0.12,JPN
-Jordan,10.12,JOR
-Republic of Korea,4.1,KOR
-Kuwait,7.13,KWT
-Malaysia,8.78,MYS
-Nepal,50.58,NPL
-Pakistan,52.47,PAK
-Philippines,3.37,PHL
-Saudi Arabia,18.07,SAU
-Singapore,16.39,SGP
-Sri Lanka,5.4,LKA
-Syrian Arab Republic,20.87,SYR
-Taiwan,2.83,TWN
-Thailand,3.66,THA
-United Arab Emirates,10.2,ARE
-Yemen,69.25,YEM
-Austria,1.48,AUT
-Belgium,5.0,BEL
-Cyprus,0.86,CYP
-Denmark,2.89,DNK
-Finland,0.37,FIN
-France,1.55,FRA
-Greece,2.79,GRC
-Hungary,0.28,HUN
-Iceland,1.53,ISL
-Ireland,0.84,IRL
-Italy,6.3,ITA
-Luxembourg,4.87,LUX
-Malta,1.92,MLT
-Netherlands,0.0,NLD
-Norway,5.85,NOR
-Poland,0.29,POL
-Portugal,11.76,PRT
-Spain,2.49,ESP
-Sweden,1.73,SWE
-Switzerland,1.44,CHE
-Turkey,11.3,TUR
-United Kingdom,0.16,GBR
-Australia,0.78,AUS
-Fiji,3.02,FJI
-New Zealand,0.14,NZL
-Papua New Guinea,40.83,PNG
-Tonga,0.81,TON
-Libyan Arab Jamahiriya,26.78,LBY
-Namibia,20.92,NAM
-Reunion,8.24,REU
-Belize,0.1,BLZ
-Brunei Darussalam,20.61,BRN
-Bulgaria,2.26,BGR
-Czech Republic,0.14,CZE
-Romania,1.84,ROU
-Russian Federation,0.9,RUS
-Cuba,9.17,CUB
-Albania,3.86,ALB
-Slovakia,0.26,SVK
-Germany,1.84,DEU
-Armenia,0.41,ARM
-Cambodia,28.33,KHM
-Kazakhstan,0.04,KAZ
-Kyrgyzstan,1.0,KGZ
-Lao People's Democratic Republic,34.59,LAO
-Maldives,29.47,MDV
-Mongolia,4.46,MNG
-Qatar,3.9,QAT
-Tajikistan,0.37,TJK
-Viet Nam,8.16,VNM
-Croatia,1.93,HRV
-Estonia,0.18,EST
-Latvia,0.22,LVA
-Lithuania,0.0,LTU
-Republic of Moldova,1.11,ROM
-Serbia,3.25,SER
-Slovenia,0.48,SVN
-"China, Macao Special Administrative Region",3.75,MAC
-Ukraine,1.49,UKR
+Algeria,0,DZA
+Benin,1,BEN
+Botswana,2,BWA
+Burundi,3,BDI
+Cameroon,4,CMR
+Central African Republic,5,CAF
+Congo,6,COG
+Egypt,7,EGY
+Gabon,8,GAB
+Gambia,9,GMB
+Ghana,10,GHA
+Cote dIvoire,11,CIV
+Kenya,12,KEN
+Lesotho,13,LSO
+Liberia,14,LBR
+Malawi,15,MWI
+Mali,16,MLI
+Mauritania,17,MRT
+Mauritius,18,MUS
+Morocco,19,MAR
+Mozambique,20,MOZ
+Niger,21,NER
+Rwanda,22,RWA
+Senegal,23,SEN
+Sierra Leone,24,SLE
+South Africa,25,ZAF
+Sudan,26,SDN
+Swaziland,27,SWZ
+United Republic of Tanzania,28,TZA
+Togo,29,TGO
+Tunisia,30,TUN
+Uganda,31,UGA
+Democratic Republic of the Congo,32,COD
+Zambia,33,ZMB
+Zimbabwe,34,ZWE
+Barbados,35,BRB
+Canada,36,CAN
+Costa Rica,37,CRI
+Dominican Rep.,38,DOM
+El Salvador,39,SLV
+Guatemala,40,GTM
+Haiti,41,HTI
+Honduras,42,HND
+Jamaica,43,JAM
+Mexico,44,MEX
+Nicaragua,45,NIC
+Panama,46,PAN
+Trinidad and Tobago,47,TTO
+USA,48,USA
+Argentina,49,ARG
+Bolivia,50,BOL
+Brazil,51,BRA
+Chile,52,CHL
+Colombia,53,COL
+Ecuador,54,ECU
+Guyana,55,GUY
+Paraguay,56,PRY
+Peru,57,PER
+Uruguay,58,URY
+Venezuela,59,VEN
+Afghanistan,60,AFG
+Bahrain,61,BHR
+Bangladesh,62,BGD
+Myanmar,63,MMR
+China,64,CHN
+"China, Hong Kong Special Administrative Region",65,HKG
+India,66,IND
+Indonesia,67,IDN
+Iran (Islamic Republic of),68,IRN
+Iraq,69,IRQ
+Israel,70,ISR
+Japan,71,JPN
+Jordan,72,JOR
+Republic of Korea,73,KOR
+Kuwait,74,KWT
+Malaysia,75,MYS
+Nepal,76,NPL
+Pakistan,77,PAK
+Philippines,78,PHL
+Saudi Arabia,79,SAU
+Singapore,80,SGP
+Sri Lanka,81,LKA
+Syrian Arab Republic,82,SYR
+Taiwan,83,TWN
+Thailand,84,THA
+United Arab Emirates,85,ARE
+Yemen,86,YEM
+Austria,87,AUT
+Belgium,88,BEL
+Cyprus,89,CYP
+Denmark,90,DNK
+Finland,91,FIN
+France,92,FRA
+Greece,93,GRC
+Hungary,94,HUN
+Iceland,95,ISL
+Ireland,96,IRL
+Italy,97,ITA
+Luxembourg,98,LUX
+Malta,99,MLT
+Netherlands,100,NLD
+Norway,101,NOR
+Poland,102,POL
+Portugal,103,PRT
+Spain,104,ESP
+Sweden,105,SWE
+Switzerland,106,CHE
+Turkey,107,TUR
+United Kingdom,108,GBR
+Australia,109,AUS
+Fiji,110,FJI
+New Zealand,111,NZL
+Papua New Guinea,112,PNG
+Tonga,113,TON
+Libyan Arab Jamahiriya,114,LBY
+Namibia,115,NAM
+Reunion,116,REU
+Belize,117,BLZ
+Brunei Darussalam,118,BRN
+Bulgaria,119,BGR
+Czech Republic,120,CZE
+Romania,121,ROU
+Russian Federation,122,RUS
+Cuba,123,CUB
+Albania,124,ALB
+Slovakia,125,SVK
+Germany,126,DEU
+Armenia,127,ARM
+Cambodia,128,KHM
+Kazakhstan,129,KAZ
+Kyrgyzstan,130,KGZ
+Lao People's Democratic Republic,131,LAO
+Maldives,132,MDV
+Mongolia,133,MNG
+Qatar,134,QAT
+Tajikistan,135,TJK
+Viet Nam,136,VNM
+Croatia,137,HRV
+Estonia,138,EST
+Latvia,139,LVA
+Lithuania,140,LTU
+Republic of Moldova,141,ROM
+Serbia,142,SER
+Slovenia,143,SVN
+"China, Macao Special Administrative Region",144,MAC
+Ukraine,145,UKR
