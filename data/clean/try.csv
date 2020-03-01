@@ -1,0 +1,147 @@
+name,pop,code
+Algeria,0,DZA
+Benin,1,BEN
+Botswana,2,BWA
+Burundi,3,BDI
+Cameroon,4,CMR
+Central African Republic,5,CAF
+Congo,6,COG
+Egypt,7,EGY
+Gabon,8,GAB
+Gambia,9,GMB
+Ghana,10,GHA
+Cote dIvoire,11,CIV
+Kenya,12,KEN
+Lesotho,13,LSO
+Liberia,14,LBR
+Malawi,15,MWI
+Mali,16,MLI
+Mauritania,17,MRT
+Mauritius,18,MUS
+Morocco,19,MAR
+Mozambique,20,MOZ
+Niger,21,NER
+Rwanda,22,RWA
+Senegal,23,SEN
+Sierra Leone,24,SLE
+South Africa,25,ZAF
+Sudan,26,SDN
+Swaziland,27,SWZ
+United Republic of Tanzania,28,TZA
+Togo,29,TGO
+Tunisia,30,TUN
+Uganda,31,UGA
+Democratic Republic of the Congo,32,COD
+Zambia,33,ZMB
+Zimbabwe,34,ZWE
+Barbados,35,BRB
+Canada,36,CAN
+Costa Rica,37,CRI
+Dominican Rep.,38,DOM
+El Salvador,39,SLV
+Guatemala,40,GTM
+Haiti,41,HTI
+Honduras,42,HND
+Jamaica,43,JAM
+Mexico,44,MEX
+Nicaragua,45,NIC
+Panama,46,PAN
+Trinidad and Tobago,47,TTO
+USA,48,USA
+Argentina,49,ARG
+Bolivia,50,BOL
+Brazil,51,BRA
+Chile,52,CHL
+Colombia,53,COL
+Ecuador,54,ECU
+Guyana,55,GUY
+Paraguay,56,PRY
+Peru,57,PER
+Uruguay,58,URY
+Venezuela,59,VEN
+Afghanistan,60,AFG
+Bahrain,61,BHR
+Bangladesh,62,BGD
+Myanmar,63,MMR
+China,64,CHN
+"China, Hong Kong Special Administrative Region",65,HKG
+India,66,IND
+Indonesia,67,IDN
+Iran (Islamic Republic of),68,IRN
+Iraq,69,IRQ
+Israel,70,ISR
+Japan,71,JPN
+Jordan,72,JOR
+Republic of Korea,73,KOR
+Kuwait,74,KWT
+Malaysia,75,MYS
+Nepal,76,NPL
+Pakistan,77,PAK
+Philippines,78,PHL
+Saudi Arabia,79,SAU
+Singapore,80,SGP
+Sri Lanka,81,LKA
+Syrian Arab Republic,82,SYR
+Taiwan,83,TWN
+Thailand,84,THA
+United Arab Emirates,85,ARE
+Yemen,86,YEM
+Austria,87,AUT
+Belgium,88,BEL
+Cyprus,89,CYP
+Denmark,90,DNK
+Finland,91,FIN
+France,92,FRA
+Greece,93,GRC
+Hungary,94,HUN
+Iceland,95,ISL
+Ireland,96,IRL
+Italy,97,ITA
+Luxembourg,98,LUX
+Malta,99,MLT
+Netherlands,100,NLD
+Norway,101,NOR
+Poland,102,POL
+Portugal,103,PRT
+Spain,104,ESP
+Sweden,105,SWE
+Switzerland,106,CHE
+Turkey,107,TUR
+United Kingdom,108,GBR
+Australia,109,AUS
+Fiji,110,FJI
+New Zealand,111,NZL
+Papua New Guinea,112,PNG
+Tonga,113,TON
+Libyan Arab Jamahiriya,114,LBY
+Namibia,115,NAM
+Reunion,116,REU
+Belize,117,BLZ
+Brunei Darussalam,118,BRN
+Bulgaria,119,BGR
+Czech Republic,120,CZE
+Romania,121,ROU
+Russian Federation,122,RUS
+Cuba,123,CUB
+Albania,124,ALB
+Slovakia,125,SVK
+Germany,126,DEU
+Armenia,127,ARM
+Cambodia,128,KHM
+Kazakhstan,129,KAZ
+Kyrgyzstan,130,KGZ
+Lao People's Democratic Republic,131,LAO
+Maldives,132,MDV
+Mongolia,133,MNG
+Qatar,134,QAT
+Tajikistan,135,TJK
+Viet Nam,136,VNM
+Croatia,137,HRV
+Estonia,138,EST
+Latvia,139,LVA
+Lithuania,140,LTU
+Republic of Moldova,141,ROM
+Serbia,142,SER
+Slovenia,143,SVN
+"China, Macao Special Administrative Region",144,MAC
+Ukraine,145,UKR
