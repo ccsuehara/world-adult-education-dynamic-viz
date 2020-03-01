@@ -45,7 +45,7 @@ var yearNow = 1950;
 var educationByIdYear = {};
 
 d3.queue()
-    .defer(d3.json, "http://enjalot.github.io/wwsd/data/world/world-110m.geojson")
+    .defer(d3.json, "data/raw/world-110m.geojson")
     .defer(d3.csv, "data/clean/no_education_by_country.csv")
     .await(ready);
 
