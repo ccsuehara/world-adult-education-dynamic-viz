@@ -145,17 +145,17 @@ function area_graph(dataset,max_val) {
     .attr("clip-path", "url(#clip)")
 
   // Area generator
-    // var area = d3.area()
-    // .x(function(d) { return x(d.data.year); })
-    // .y0(function(d) { return y(d[0]); })
-    // .y1(function(d) { return y(d[1]); })
+    var area = d3.area()
+    .x(function(d) { return x(d.data.year); })
+    .y0(function(d) { return y(d[0]); })
+    .y1(function(d) { return y(d[1]); })
 
-       var area = function(datum, boolean) {
-        return d3.area()
-        .y0(function(d) { return y(d[0]); })
-        .y1(function(d) { return y(d[1]); })
-        .x(function (d) { return boolean ? x(d.data.year) : 0; })
-        (datum);}
+       // var area = function(datum, boolean) {
+       //  return d3.area()
+       //  .y0(function(d) { return y(d[0]); })
+       //  .y1(function(d) { return y(d[1]); })
+       //  .x(function (d) { return boolean ? x(d.data.year) : 0; })
+       //  (datum);}
 
         // svg.append("path")
         // .data([data])
