@@ -29,6 +29,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "d3-scale": "^3.2.1",
     "domready": "^1.0.8"
   },
   "scripts": {

@@ -3,12 +3,74 @@ a {
   cursor: pointer;
 }
 
-html,
-body {
-  background: #D6D6CE;
-  font-family: Verdana, Geneva, sans-serif;
+ h1, h3 {
+  background: #383554;
+  font-family: Roboto, sans-serif;
+  text-align:center;
+  color : #EDECEF;
+  height: 100%;
+  margin: 0;
+  padding: 100;
+  width: 100%;
+}
+
+ h5 {
+  font-family: Roboto, sans-serif;
+  color : #383554;
   height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
 }
+
+.buble_legend{
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.buble_legend text,
+.axis text {
+  font-size: 13px;
+  fill: #333;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke-width:1px;
+  stroke: #e7e7e7;
+}
+
+circle {
+  stroke: #fff;
+}
+
+.bubble {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.bubble text {
+  opacity: 0;
+  pointer-events: none;
+  font-size: 12px;
+
+}
+
+.bubble:hover text {
+  opacity: 1;
+}
+
+.bubble:hover circle {
+  fill-opacity: 1;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 12px ;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+ }
+

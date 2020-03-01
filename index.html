@@ -1,13 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
+<link rel="stylesheet" href="./src/stylesheets/main.css">
 <html>
   <head>
-    <title>mORE TO COME SOON</title>
+    <title>Understanding the skills</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body> 
-  	<h1> More to come soon </h1>
-    <div id="app"></div>
-    <script src="bundle.js"></script>
+  	<h1> Before skills, education </h1>
+    <h3> A journey in the evolution of education around the world </h3>
+    <h5> Interactive part of the project for CAPP 30239.  <br>
+         Carla, Luise </h5>
+    <div id="app">
+      
+    </div>
+    
+    <!-- <script src="https://d3js.org/d3.v4.0.0-alpha.35.min.js"></script> -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="./src/app.js">  </script>
+    
+   <div id="area_chart"> 
+    <script> area_graph("./data/graph_2.csv",100) </script>
+    <script> area_graph("./data/graph_1.csv",4000000) </script>
+    <p> <br> <br> <br> </p>
+
+    <button onclick="update('years_education.csv')">1950-1960</button>
+    <button onclick="update('years_education.csv')">1950-1970</button>
+    <button onclick="update('years_education.csv')">1950-1980r</button>
+    <button onclick="update('years_education.csv')">1950-1990</button>
+    <button onclick="update('years_education.csv')">1950-2000</button>
+    <button onclick="update('years_education.csv')">1950-2010</button>
+     <script> scatterPlot("./data/years_education.csv");</script>
+    </div> 
   </body>
+   
+  
+
+
+
+
 </html>
