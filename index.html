@@ -9,9 +9,9 @@
   </head>
   <body> 
   	<h1> Before skills, education </h1>
-    <h3> A journey in the evolution of education around the world </h3>
+    <h3> A journey into the evolution of education around the world </h3>
     <h5> Interactive part of the project for CAPP 30239.  <br>
-         Carla, Luisee </h5>
+         By Carla Solis and Luise Eduardo San Martin</h5>
     <div id="app">
       
     </div>
@@ -19,6 +19,10 @@
     <!-- <script src="https://d3js.org/d3.v4.0.0-alpha.35.min.js"></script> -->
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
     <script src="./src/app.js">  </script>
     
    <div id="area_chart"> 
@@ -42,7 +46,12 @@
 
      <script> scatterPlot("./data/years_education.csv");</script>
 
-    </div> 
+    </div>
+    <div id="sliderContainer">
+        <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
+        <span id="range">1950</span>
+    </div>
+    <script src="./src/app_map.js">  </script>
   </body>
    
   
