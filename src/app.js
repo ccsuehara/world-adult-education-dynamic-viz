@@ -145,10 +145,25 @@ function area_graph(dataset,max_val) {
     .attr("clip-path", "url(#clip)")
 
   // Area generator
-    var area = d3.area()
-    .x(function(d) { return x(d.data.year); })
-    .y0(function(d) { return y(d[0]); })
-    .y1(function(d) { return y(d[1]); })
+    // var area = d3.area()
+    // .x(function(d) { return x(d.data.year); })
+    // .y0(function(d) { return y(d[0]); })
+    // .y1(function(d) { return y(d[1]); })
+
+       var area = function(datum, boolean) {
+        return d3.area()
+        .y0(function(d) { return y(d[0]); })
+        .y1(function(d) { return y(d[1]); })
+        .x(function (d) { return boolean ? x(d.data.year) : 0; })
+        (datum);}
+
+        // svg.append("path")
+        // .data([data])
+        // .attr("class", "area")
+        // .attr("d", d => area(d, false))
+        // .transition()
+        // .duration(2000)
+        // .attr("d", d => area(d,true));
 
   // Show the areas
     areaChart
@@ -290,7 +305,7 @@ function scatterPlot(datafile){
     data.forEach(function(d) {
       d.y = +d["2010"];
       d.x = +d["1950"];
-      d.r = +d["1975"];
+      d.r = +d["2010_p"];
     });
 
     data.sort(function(a,b) { return b.r - a.r; });
@@ -300,7 +315,7 @@ function scatterPlot(datafile){
     // })).nice();
 
     radius.domain(d3.extent(data, function(d) {
-      return d.r;
+       return Math.sqrt(d.r)*10;
     })).nice();
 
     svg.append("g")
@@ -328,9 +343,9 @@ function scatterPlot(datafile){
     var tipMouseover = function(d) {
                     // var color = scaleOrdinal(d.region_code);
                     var html  = d.country + "<br/>" +
-                                 d['1950'] + "</b> before <b/>" + "<br/>" +
-                                 d['2010'] + "</b> after <b/>"+ "<br/>" +
-                                 d['1975'] + "</b> population <b/>"
+                                 d['1950'] + "</b> in 1950 <b/>" + "<br/>" +
+                                 d['2010'] + "</b> in 2010 <b/>"+ "<br/>" +
+                                 d['2010_p'] + "</b> (mill.) population 2010 <b/>"
 
                     tooltip.html(html)
                         .style("left", (d3.event.pageX + 15) + "px")
@@ -370,6 +385,7 @@ function scatterPlot(datafile){
       // });
 
     svg.append("text")
+      .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
       .attr("class", "label")
@@ -428,184 +444,312 @@ function scatterPlot(datafile){
         d3.selectAll(".bubble")
           .style("opacity", 1);
       });
-  });
-
-}
-
-function update(datafile){
-
-  var svg = svgx
-
-  var xscale = d3.scaleLinear()
-    .domain([0,15])
-    .range([0,width]);
-
-  var yscale = d3.scaleLinear()
-    .domain([0,15])
-    .range([height,0]);
-
-  var radius = d3.scaleSqrt()
-    .range([2,7]);
-
-  var xAxis = d3.axisBottom()
-    .tickSize(-height)
-    .scale(xscale);
-
-  var yAxis = d3.axisLeft()
-    .tickSize(-width)
-    .scale(yscale)
-
-  var color = d3.scaleOrdinal(d3.schemeCategory10);
-
-  d3.csv(datafile, function(error, data) {
-    // data pre-processing
-    data.forEach(function(d) {
-      d.y = +d["2010"];
-      d.x = +d["1950"];
-      d.r = +d["1975"];
-    });
-
-    data.sort(function(a,b) { return b.r - a.r; });
-
-    // yscale.domain(d3.extent(data, function(d) {
-    //   return d.y;
-    // })).nice();
-
-    radius.domain(d3.extent(data, function(d) {
-      return d.r;
-    })).nice();
-
-    svg.append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .attr("class", "x axis")
-      .call(xAxis);
-
-    svg.append("g")
-      .attr("transform", "translate(0,0)")
-      .attr("class", "y axis")
-      .call(yAxis);
-
-    var group = svg.selectAll("g.bubble")
-      .data(data)
-      .enter().append("g")
-      .attr("class", "bubble")
-      .attr("transform", function(d) {
-        return "translate(" + xscale(d.x) + "," + yscale(d.y) + ")"
-      });
-
-    var tooltip = d3.select("body").append("div")
-                    .attr("class", "tooltip")
-                    .style("opacity", 0);
-
-    var tipMouseover = function(d) {
-                    // var color = scaleOrdinal(d.region_code);
-                    var html  = d.country + "<br/>" +
-                                 d['1950'] + "</b> before <b/>" + "<br/>" +
-                                 d['2010'] + "</b> after <b/>"+ "<br/>" +
-                                 d['1975'] + "</b> population <b/>"
-
-                    tooltip.html(html)
-                        .style("left", (d3.event.pageX + 15) + "px")
-                        .style("top", (d3.event.pageY - 28) + "px")
-                      .transition()
-                        .duration(200) // ms
-                        .style("opacity", .9) // started as 0!
-
-                };
-
-    // tooltip mouseout event handler
-    var tipMouseout = function(d) {
-                    tooltip.transition()
-                        .duration(500) // ms
-                        .style("opacity", 0); // don't care about position!
-                };
 
 
-    group
-      .append("circle")
-      .attr("r", function(d) { return radius(d.r);  })
-      .style("fill", function(d) {
-        return color(d["region_code"]);
-      })
-      .on("mouseover", tipMouseover)
-      .on("mouseout", tipMouseout)
-      // .merge(group)
+      d3.select("#scatt_1").on("click", function() {
+      group
       .transition()
-        .duration(3000);
-
-    // group
-    //   .append("text")
-    //   .attr("x", function(d) { return radius(d.r); })
-    //   .attr("alignment-baseline", "middle");
-      // .text(function(d) {
-      //   return d["country"];  
-      // });
-
-    svg.append("text")
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['1950']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['1950_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
       .attr("class", "label")
-      .text("Years of Education (2010)")
-      .transition()
-        .duration(3000);;
+      .text("Years of Education (1950)");
+  
+      });
 
-    svg.append("text")
-      .attr("x", width-2)
-      .attr("y", height-6)
-      .attr("text-anchor", "end")
+      d3.select("#scatt_2").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['1960']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['1960_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
       .attr("class", "label")
-      .text("Years of Education (1950)")
-      .transition()
-        .duration(3000);;
+      .text("Years of Education (1960)");
+  
+      });
 
-             // add diagonal line
-     svg.append("line")
-              .attr("x1", xscale(0))
-              .attr("y1", yscale(0))
-              .attr("x2", xscale(15))
-              .attr("y2", yscale(15))
-              .attr("stroke-width", 2)
-              .attr("stroke", "gray")
-              .attr("stroke-dasharray", "2,5")
-              .transition()
-                .duration(3000);  //style of svg-line
+      d3.select("#scatt_3").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['1970']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['1970_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
+      .attr("class", "label")
+      .text("Years of Education (1970)");
+  
+      });
+
+      d3.select("#scatt_4").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['1980']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['1980_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
+      .attr("class", "label")
+      .text("Years of Education (1980)");
+  
+      });
+
+      d3.select("#scatt_5").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['1990']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['1990_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
+      .attr("class", "label")
+      .text("Years of Education (1990)");
+  
+      });
+
+      d3.select("#scatt_6").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['2000']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['2000_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
+      .attr("class", "label")
+      .text("Years of Education (2000)");
+  
+      });
+
+      d3.select("#scatt_7").on("click", function() {
+      group
+      .transition()
+      .attr("transform", function(d) {
+        return "translate(" + xscale(d.x) + "," + yscale(d['2010']) + ")"
+      })
+      .attr("r", function(d) { return radius(d['2010_p']);
+      });
+      d3.select("#changing_text").remove()
+      svg.append("text")
+      .attr("id", "changing_text")
+      .attr("x", 6)
+      .attr("y", -2)
+      .attr("class", "label")
+      .text("Years of Education (2010)");
+  
+      });
+
+  });
+
+}
+
+// function update(datafile){
+
+//   var svg = svgx
+
+//   var xscale = d3.scaleLinear()
+//     .domain([0,15])
+//     .range([0,width]);
+
+//   var yscale = d3.scaleLinear()
+//     .domain([0,15])
+//     .range([height,0]);
+
+//   var radius = d3.scaleSqrt()
+//     .range([2,7]);
+
+//   var xAxis = d3.axisBottom()
+//     .tickSize(-height)
+//     .scale(xscale);
+
+//   var yAxis = d3.axisLeft()
+//     .tickSize(-width)
+//     .scale(yscale)
+
+//   var color = d3.scaleOrdinal(d3.schemeCategory10);
+
+//   d3.csv(datafile, function(error, data) {
+//     // data pre-processing
+//     data.forEach(function(d) {
+//       d.y = +d["2010"];
+//       d.x = +d["1950"];
+//       d.r = +d["1975"];
+//     });
+
+//     data.sort(function(a,b) { return b.r - a.r; });
+
+//     // yscale.domain(d3.extent(data, function(d) {
+//     //   return d.y;
+//     // })).nice();
+
+//     radius.domain(d3.extent(data, function(d) {
+//       return d.r;
+//     })).nice();
+
+//     svg.append("g")
+//       .attr("transform", "translate(0," + height + ")")
+//       .attr("class", "x axis")
+//       .call(xAxis);
+
+//     svg.append("g")
+//       .attr("transform", "translate(0,0)")
+//       .attr("class", "y axis")
+//       .call(yAxis);
+
+//     var group = svg.selectAll("g.bubble")
+//       .data(data)
+//       .enter().append("g")
+//       .attr("class", "bubble")
+//       .attr("transform", function(d) {
+//         return "translate(" + xscale(d.x) + "," + yscale(d.y) + ")"
+//       });
+
+//     var tooltip = d3.select("body").append("div")
+//                     .attr("class", "tooltip")
+//                     .style("opacity", 0);
+
+//     var tipMouseover = function(d) {
+//                     // var color = scaleOrdinal(d.region_code);
+//                     var html  = d.country + "<br/>" +
+//                                  d['1950'] + "</b> before <b/>" + "<br/>" +
+//                                  d['2010'] + "</b> after <b/>"+ "<br/>" +
+//                                  d['1975'] + "</b> population <b/>"
+
+//                     tooltip.html(html)
+//                         .style("left", (d3.event.pageX + 15) + "px")
+//                         .style("top", (d3.event.pageY - 28) + "px")
+//                       .transition()
+//                         .duration(200) // ms
+//                         .style("opacity", .9) // started as 0!
+
+//                 };
+
+//     // tooltip mouseout event handler
+//     var tipMouseout = function(d) {
+//                     tooltip.transition()
+//                         .duration(500) // ms
+//                         .style("opacity", 0); // don't care about position!
+//                 };
+
+
+//     group
+//       .append("circle")
+//       .attr("r", function(d) { return radius(d.r);  })
+//       .style("fill", function(d) {
+//         return color(d["region_code"]);
+//       })
+//       .on("mouseover", tipMouseover)
+//       .on("mouseout", tipMouseout)
+//       // .merge(group)
+//       .transition()
+//         .duration(3000);
+
+//     // group
+//     //   .append("text")
+//     //   .attr("x", function(d) { return radius(d.r); })
+//     //   .attr("alignment-baseline", "middle");
+//       // .text(function(d) {
+//       //   return d["country"];  
+//       // });
+
+//     svg.append("text")
+//       .attr("x", 6)
+//       .attr("y", -2)
+//       .attr("class", "label")
+//       .text("Years of Education (2010)")
+//       .transition()
+//         .duration(3000);;
+
+//     svg.append("text")
+//       .attr("x", width-2)
+//       .attr("y", height-6)
+//       .attr("text-anchor", "end")
+//       .attr("class", "label")
+//       .text("Years of Education (1950)")
+//       .transition()
+//         .duration(3000);;
+
+//              // add diagonal line
+//      svg.append("line")
+//               .attr("x1", xscale(0))
+//               .attr("y1", yscale(0))
+//               .attr("x2", xscale(15))
+//               .attr("y2", yscale(15))
+//               .attr("stroke-width", 2)
+//               .attr("stroke", "gray")
+//               .attr("stroke-dasharray", "2,5")
+//               .transition()
+//                 .duration(3000);  //style of svg-line
              
 
-    var buble_legend = svg.selectAll(".buble_legend")
-        .data(color.domain())
-      .enter().append("g")
-        .attr("class", "buble_legend")
-        .attr("transform", function(d, i) { return "translate(2," + i * 15 + ")"; });
+//     var buble_legend = svg.selectAll(".buble_legend")
+//         .data(color.domain())
+//       .enter().append("g")
+//         .attr("class", "buble_legend")
+//         .attr("transform", function(d, i) { return "translate(2," + i * 15 + ")"; });
 
-    buble_legend.append("rect")
-        .attr("x", width)
-        .attr("width", 12)
-        .attr("height", 12)
-        .style("fill", color);
+//     buble_legend.append("rect")
+//         .attr("x", width)
+//         .attr("width", 12)
+//         .attr("height", 12)
+//         .style("fill", color);
 
-    buble_legend.append("text")
-        .attr("x", width + 20)
-        .attr("y", 6)
-        .attr("dy", ".35em")
-        .style("text-anchor", "start")
-        .text(function(d) { return d; });
+//     buble_legend.append("text")
+//         .attr("x", width + 20)
+//         .attr("y", 6)
+//         .attr("dy", ".35em")
+//         .style("text-anchor", "start")
+//         .text(function(d) { return d; });
 
-    buble_legend.on("mouseover", function(type) {
-        d3.selectAll(".buble_legend")
-          .style("opacity", 0.1);
-        d3.select(this)
-          .style("opacity", 1);
-        d3.selectAll(".bubble")
-          .style("opacity", 0.1)
-          .filter(function(d) { return d["region_code"] == type; })
-          .style("opacity", 1);
-      })
-      .on("mouseout", function(type) {
-        d3.selectAll(".buble_legend")
-          .style("opacity", 1);
-        d3.selectAll(".bubble")
-          .style("opacity", 1);
-      });
-  });
-}
+//     buble_legend.on("mouseover", function(type) {
+//         d3.selectAll(".buble_legend")
+//           .style("opacity", 0.1);
+//         d3.select(this)
+//           .style("opacity", 1);
+//         d3.selectAll(".bubble")
+//           .style("opacity", 0.1)
+//           .filter(function(d) { return d["region_code"] == type; })
+//           .style("opacity", 1);
+//       })
+//       .on("mouseout", function(type) {
+//         d3.selectAll(".buble_legend")
+//           .style("opacity", 1);
+//         d3.selectAll(".bubble")
+//           .style("opacity", 1);
+//       });
+//   });
+// }
 
