@@ -7,49 +7,79 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
-  <body> 
-  	<h1> Before skills, education </h1>
-    <h3> A journey into the evolution of education around the world </h3>
-    <h5> Interactive part of the project for CAPP 30239.  <br>
-         By Carla Solis and Luise Eduardo San Martin</h5>
-    <div id="app">
-      
-    </div>
-    
-    <!-- <script src="https://d3js.org/d3.v4.0.0-alpha.35.min.js"></script> -->
+<link rel="stylesheet" href="style.css">
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-queue.v2.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
     <script src="./src/app.js">  </script>
-    
-   <div id="area_chart"> 
-    <script> area_graph("./data/graph_2.csv",100) </script>
-    <script> area_graph("./data/graph_1.csv",4000000) </script>
-    <p> <br> <br> <br> </p>
-<!-- 
-    <button onclick="update('years_education.csv')">1950-1960</button>
-    <button onclick="update('years_education.csv')">1950-1970</button>
-    <button onclick="update('years_education.csv')">1950-1980r</button>
-    <button onclick="update('years_education.csv')">1950-1990</button>
-    <button onclick="update('years_education.csv')">1950-2000</button>
-    <button onclick="update('years_education.csv')">1950-2010</button> -->
-     <button id="scatt_1">Beginning </button>
-     <button id="scatt_2">1960 </button>
-     <button id="scatt_3">1970 </button>
-     <button id="scatt_4">1980 </button>
-     <button id="scatt_5">1990 </button>
-     <button id="scatt_6">2000 </button>
-     <button id="scatt_7">2010 </button>
+<div class="article">
+  <div class="wrapper">
+    <div class="wrapperText">
+      <h1>
+        <mark>Before skills, comes education</mark>
+      </h1>
+      <h3> 
+        <mark>A journey into the evolution of education around the world</mark>
+      </h3>
+      <p id="author">
+        <mark>by Carla Solis and Luise San Martin</mark>
+      </p>
+      </div>
+    </div>
 
-     <script> scatterPlot("./data/years_education.csv");</script>
+    <div class="articleText">
+      <h4 class="introduction">Three wolf moon post-ironic bespoke lomo tattooed kinfolk. Retro typewriter gluten-free hashtag cold-pressed. Beard cliche echo park banh mi. Tattooed helvetica celiac, leggings waistcoat vegan retro selfies art party distillery mustache echo park.</h4>
+
+
+      <p>Beard cliche echo park banh mi. Salvia tousled sustainable fap, poutine direct trade scenester. Vinyl gastropub put a bird on it, skateboard YOLO ethical flannel flexitarian kale chips. 3 wolf moon post-ironic bespoke lomo tattooed kinfolk. Retro typewriter gluten-free hashtag cold-pressed. Meh paleo aesthetic, chia mlkshk etsy pickled ethical. Tattooed helvetica celiac, leggings waistcoat vegan retro selfies art party distillery mustache echo park.</p>
+
+      <h2 class = "first_part">Kale chips</h2>
+      <p>FIRST FIRST FIRST st-ironic normcore semiotics listicle deep v health goth cold-pressed. Raw denim williamsburg synth normcore actually. Health goth post-ironic whatever, flannel mlkshk tacos thundercats seitan put a bird on it try-hard migas small batch. Occupy small batch intelligentsia, food truck gochujang viral iPhone letterpress chicharrones etsy flannel. Banjo +1 slow-carb venmo hashtag health goth. Tumblr DIY occupy try-hard. Quinoa scenester disrupt brooklyn mixtape, banh mi hoodie beard messenger bag locavore kale chips.</p>
+
+        <div id="area_chart"> 
+            <script> area_graph("./data/graph_1.csv",4000000); </script>
+        </div>
+      <p>Occupy gluten-free umami wayfarers, post-ironic normcore semiotics listicle deep v health goth cold-pressed. Raw denim williamsburg synth normcore actually. Health goth post-ironic whatever, flannel mlkshk tacos thundercats seitan put a bird on it try-hard migas small batch. Occupy small batch intelligentsia, food truck gochujang viral iPhone letterpress chicharrones etsy flannel. Banjo +1 slow-carb venmo hashtag health goth. Tumblr DIY occupy try-hard. Quinoa scenester disrupt brooklyn mixtape, banh mi hoodie beard messenger bag locavore kale chips.</p>
+
+
+        
+
+      <p>Pop-up echo park semiotics williamsburg, next level literally retro neutra. Microdosing twee lo-fi squid actually art party, intelligentsia sartorial try-hard tote bag irony. Cliche mlkshk freegan, truffaut master cleanse bushwick offal distillery chicharrones man bun occupy thundercats vice pork belly yr. Small batch mixtape helvetica +1. Godard ethical tote bag 8-bit fixie, raw denim pitchfork. Fap venmo four loko lo-fi chicharrones, small batch umami retro intelligentsia irony pug man braid flannel migas. Gentrify taxidermy bicycle rights sustainable, chia tattooed meggings chicharrones literally actually gochujang fanny pack.</p>
+        
+        <div id="area_chart"> 
+          <script> area_graph("./data/graph_1.csv",4000000) </script>
+        </div>
+
+      <h2>Helvetica cray</h2>
+      <p>Locavore YOLO asymmetrical polaroid, aesthetic bitters mumblecore gochujang master cleanse cray helvetica kogi. Put a bird on it helvetica food truck pop-up etsy, echo park forage organic readymade trust fund. Post-ironic try-hard echo park, selfies wolf selvage synth squid single-origin coffee raw denim tacos twee hella. Art party meggings pug shoreditch waistcoat. Post-ironic hammock quinoa, pickled pop-up cardigan cred put a bird on it banh mi green juice cliche paleo. 90's cray fingerstache, irony chia slow-carb butcher deep v direct trade YOLO. Helvetica cray vegan freegan four loko put a bird on it, gentrify etsy locavore wayfarers pickled aesthetic tousled.</p>
+
+        <div id="scatter_chart">
+             <button id="scatt_1">Beginning </button>
+             <button id="scatt_2">1960 </button>
+             <button id="scatt_3">1970 </button>
+             <button id="scatt_4">1980 </button>
+             <button id="scatt_5">1990 </button>
+             <button id="scatt_6">2000 </button>
+             <button id="scatt_7">2010 </button>
+             <script> scatterPlot("./data/years_education.csv");</script> 
+
+        </div>
+
+
+
+            <div id="sliderContainer">
+              <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
+              <span id="range">1950</span>
+            </div>
+            <script src="./src/app_map.js">  </script>
 
     </div>
-    <div id="sliderContainer">
-        <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
-        <span id="range">1950</span>
-    </div>
-    <script src="./src/app_map.js">  </script>
-  </body>
+</div>            
+
+
+
+
+
 </html>

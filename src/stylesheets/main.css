@@ -1,18 +1,68 @@
+/*@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+*{
+   I know I could write "margin: 0; padding: 0;". But that's not performant. 
+  font-family: 'Open Sans';
+  line-height: 170%;
+  color: #444;
+}*/
+/*body, p, h1, h2{
+  margin: 0;
+  padding: 0;
+}*/
+
+h2{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+h1{
+  font-size: 50px;
+}
+
+h3{
+  font-size: 30px;
+}
+
+mark {
+  background-color: white;
+  padding: 0px 1px;
+  /*opacity: 0.5;*/
+  
+} 
+
+.wrapper{
+  padding: 100px;
+  margin: 0 0 50px 0;
+  text-align: center;
+  height: 45vh;
+  background: url('https://static.themoscowtimes.com/image/article_1360/c5/9d6336449aa84ea6a4bc76a44bdf8705.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: all 0.4s ease;
+
+}
+
+.wrapperText {
+	font: black !important;
+
+}
+.articleText{
+  margin: 0 10% 30px 20%; 
+  width: 50%;
+  max-width: 600px;
+  padding-left: 120px;
+  
+  transition: all 0.4s ease;
+}
+.introduction{
+  margin-bottom: 20px;
+}
+
 
 a {
   cursor: pointer;
 }
 
- h1, h3 {
-  background: #383554;
-  font-family: Roboto, sans-serif;
-  text-align:center;
-  color : #EDECEF;
-  height: 100%;
-  margin: 0;
-  padding: 100;
-  width: 100%;
-}
+
 
  h5 {
   font-family: Roboto, sans-serif;
