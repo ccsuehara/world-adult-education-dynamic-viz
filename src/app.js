@@ -25,7 +25,7 @@
 
 
 
-function area_graph(dataset,max_val) {
+function area_graph(dataset,max_val,subtitle) {
 // set the dimensions and margins of the graph
   var margin = {top: 60, right: 230, bottom: 50, left: 50},
       width = 800 - margin.left - margin.right,
@@ -78,7 +78,7 @@ function area_graph(dataset,max_val) {
     .attr("y", -35)
     .attr("dy", "0.71em")
     .attr("fill", "#000")
-    .text("Percentage of population in each education level")
+    .text(subtitle)
     .style("font", "18px avenir")
     .style("fill", "#000000");
 
@@ -266,7 +266,7 @@ function area_graph(dataset,max_val) {
 }
 
 function scatterPlot(datafile){
-  var margin = { top: 30, right: 200, bottom: 40, left: 200};
+  var margin = { top: 80, right: 200, bottom: 60, left: 200};
         var width = 1400 - margin.left - margin.right;
         var height = 600 - margin.top - margin.bottom;
 
@@ -383,6 +383,37 @@ function scatterPlot(datafile){
       // .text(function(d) {
       //   return d["country"];  
       // });
+
+    //Adds the title to my graph
+    svg.append("text")
+    .attr("x", 0)
+    .attr("y", -60)
+    .attr("dy", "0.71em")
+    .attr("fill", "#000")
+    .text("The years of education have dramatically improved throughout the years")
+    .style("font", "23px avenir")
+    .style("fill", "#000000");
+
+//Adds the subtitle to my graph
+    svg.append("text")
+    .attr("x", 0)
+    .attr("y", -35)
+    .attr("dy", "0.71em")
+    .attr("fill", "#000")
+    .text("Years of education")
+    .style("font", "18px avenir")
+    .style("fill", "#000000");
+
+
+//Adds the source at the bottom of the page
+    svg.append("text")
+    .attr("x", 0)
+    .attr("y", 500)
+    .attr("dy", "1em")
+    .style("font", "12px avenir")
+    .style("fill", "#000000")
+    .text("Source: Barro-Lee datasets");
+
 
     svg.append("text")
       .attr("id", "changing_text")
