@@ -7,76 +7,85 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-queue.v2.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
-    <script src="./src/app.js">  </script>
-<div class="article">
-  <div class="wrapper">
-    <div class="wrapperText">
-      <h1>
-        <mark>Before skills, comes education</mark>
-      </h1>
-      <h3> 
-        <mark>A brief journey into the evolution of adult education around the world</mark>
-      </h3>
-      <p id="author">
-        <mark>by Carla Solis and Luise San Martin</mark>
-      </p>
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v2.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+  <script src="./src/app.js"></script>
+  <body>
+    <div class="article">
+      
+      <div class="wrapper">
+        <div class="wrapperText">
+          <h1>
+            <mark>Before skills, comes education</mark>
+          </h1>
+          <h3> 
+            <mark>A brief journey into the evolution of adult education around the world</mark>
+          </h3>
+          <p id="author">
+            <mark>by Carla Solis and Luis Eduardo San Martin</mark>
+          </p>
+        </div>
       </div>
-    </div>
 
-    <div class="articleText">
-      <h4 class="introduction">The spotlight of education has usually been put on children's education. Nevertheless, the ones that are currently part of the workforce and delivering the productive needs of the economy are the current adult population. How well suited and prepared is this workforce?  </h4>
+      <div class="articleText">
+        <h4 class="introduction">The spotlight of education has usually been put on children's education. Nevertheless, the ones that are currently part of the workforce and delivering the productive needs of the economy are the current adult population. How well suited and prepared is this workforce? </h4>
 
+        <p>Education is the pilar for building the skills we will need in life. Although we really don't know yet what the future demands for skills will be, the basic set of skills will always come first. The world is currently in an education crisis, where going to school is not the same as learning. This is true for children who are curently in the school, but moreso, for adults who are part of the workforce and have, supposedly, consolidated their skills by then. This project aims to overview the education trends that have been achieved by the countries around the world, from 1950 to 2010. We will look at the evolution and the major gaps that are still missing.</p>
 
-      <p>Education is the pilar for building the skills we will need in life. Although we really don't know yet what the future demands for skills will be, the basic set of skills will always come first. The world is currently in an education crisis, where going to school is not the same as learning. This is true for children who are curently in the school, but moreso, for adults who are part of the workforce and have, supposedly, consolidated their skills by then. This project aims to overview the education trends that have been achieved by the countries around the world, from 1950 to 2010. We will look at the evolution and the major gaps that are still missing.</p>
-
-      <h2 class = "first_part"> Education levels in adult population</h2>
-      <p>In 1950, more than 50% of the world population didn't even start primary education, and less than 15% of the population had an education level greater than primary. 60 years after, the panorama has changed: More than 60% of the world population has at least, completed secondary. But is this enough? Tertiary education (higher education) has increased only to mean a little more than 10% of the total population, moreso, as we will look afterwards, the distribution of attainment is different depending on the place. </p>
+        <h2 class = "first_part">Education levels in adult population</h2>
+        <p>In 1950, more than 50% of the world population didn't even start primary education, and less than 15% of the population had an education level greater than primary. 60 years after, the panorama has changed: More than 60% of the world population has at least, completed secondary. But is this enough? Tertiary education (higher education) has increased only to mean a little more than 10% of the total population, moreso, as we will look afterwards, the distribution of attainment is different depending on the place. </p>
 
         <div id="area_chart"> 
-            <script> area_graph("./data/graph_1.csv",
-          4000000, "People in each education level"); </script>
+            <script> area_graph("./data/graph_1.csv", 4000000,"People in each education level", "area_chart");</script>
         </div>
 
-      <p>There has been many significative changes like the shift in demographic trends: Adult population has almost tripled from 1950 to 2010: This means going from 1.3 billion people to almost 4 bilion. Proportionately, this also means much more educated people than before. Humanity may have never seen this size of educated people ever. Does this necessarily mean that there will be enough accumulated human capital to solve problems? Does this mean more agency for people? </p>
+        <p>There have been many significative changes like the shift in demographic trends: Adult population has almost tripled from 1950 to 2010: This means going from 1.3 billion people to almost 4 bilion. Proportionately, this also means much more educated people than before. Humanity may have never seen this size of educated people ever. Does this necessarily mean that there will be enough accumulated human capital to solve problems? Does this mean more agency for people? </p>
 
-        
-        <div id="area_chart"> 
-          <script> area_graph("./data/graph_2.csv", 100, "Percentage of population in each education level") </script>
+        <div id="area_chart2"> 
+        <script> area_graph("./data/graph_2.csv", 100, "Percentage of population in each education level", "area_chart2")</script>
         </div>
 
-      <h2> The evolution of countries</h2>
-      <p> All countries have univocally augmented their mean year of education. There are very dramatic cases, like </p>
+        <h2>The evolution of countries</h2>
+        <p> All countries have univocally augmented their mean year of education. There are very dramatic cases, like </p>
 
         <div id="scatter_chart">
-             <button id="scatt_1">Beginning </button>
-             <button id="scatt_2">1960 </button>
-             <button id="scatt_3">1970 </button>
-             <button id="scatt_4">1980 </button>
-             <button id="scatt_5">1990 </button>
-             <button id="scatt_6">2000 </button>
-             <button id="scatt_7">2010 </button>
-             <script> scatterPlot("./data/years_education.csv");</script> 
-
+          <button id="scatt_1">Beginning </button>
+          <button id="scatt_2">1960 </button>
+          <button id="scatt_3">1970 </button>
+          <button id="scatt_4">1980 </button>
+          <button id="scatt_5">1990 </button>
+          <button id="scatt_6">2000 </button>
+          <button id="scatt_7">2010 </button>
+          <script> scatterPlot("./data/years_education.csv", "scatter_chart");</script> 
         </div>
 
+        <h2>Remaining gaps</h2>
+        <p>Something about the remaining gaps...</p>
 
-
-            <div id="sliderContainer">
-              <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
-              <span id="range">1950</span>
-            </div>
-            <script src="./src/app_map.js">  </script>
-
+        <div id="theMap">
+          <div id="sliderContainer">
+            <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
+            <span id="range">1950</span>
+          </div>
+          <div id="dropdownList">
+            <select id = "indicatorList">
+              <option value = "no_education">Population with no education</option>
+              <option value = "secondary_incomplete">Population with incomplete secondary education</option>
+              <option value = "gap_female-male_no-education">Gap female-male population with no education</option>
+              <option value = "gap_female-male_secondary-incomplete">Gap female-male population with no secondary education</option>
+            </select>
+          </div>
+          <script src="./src/app_map.js"></script>
+        </div>
+      
+      </div>
+   
     </div>
-</div>            
 
-
-
-
+  </body>
 
 </html>
