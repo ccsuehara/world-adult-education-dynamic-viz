@@ -41,17 +41,19 @@ mark {
 }
 
 .wrapperText {
-	font: black !important;
+	font: black ;
 
 }
-.articleText{
+ p, h2, h4,#area_chart, #area_chart2, #theMap, #AllButtons{
   margin: 0 10% 30px 20%; 
   width: 50%;
   max-width: 600px;
-  padding-left: 120px;
+  padding-left: 100px;
   
   transition: all 0.4s ease;
 }
+
+
 .introduction{
   margin-bottom: 20px;
 }
@@ -61,16 +63,6 @@ a {
   cursor: pointer;
 }
 
-
-
- h5 {
-  font-family: Roboto, sans-serif;
-  color : #383554;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
 .buble_legend{
   opacity: 1;

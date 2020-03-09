@@ -50,17 +50,21 @@
         </div>
 
         <h2>The evolution of countries</h2>
-        <p> All countries have univocally augmented their mean year of education. There are very dramatic cases, like </p>
+        <p> All countries have univocally augmented their mean year of education. The biggest changes happened since the decade of 1980. (More to come).</p>
 
         <div id="scatter_chart">
-          <button id="scatt_1">Beginning </button>
-          <button id="scatt_2">1960 </button>
-          <button id="scatt_3">1970 </button>
-          <button id="scatt_4">1980 </button>
-          <button id="scatt_5">1990 </button>
-          <button id="scatt_6">2000 </button>
-          <button id="scatt_7">2010 </button>
-          <script> scatterPlot("./data/years_education.csv", "scatter_chart");</script> 
+            <div id = "AllButtons">
+              <button id="scatt_1">Beginning </button>
+              <button id="scatt_2">1960 </button>
+              <button id="scatt_3">1970 </button>
+              <button id="scatt_4">1980 </button>
+              <button id="scatt_5">1990 </button>
+              <button id="scatt_6">2000 </button>
+              <button id="scatt_7">2010 </button>
+            </div>
+            <div id = "scatter_graph">
+              <script> scatterPlot("./data/years_education.csv", "scatter_chart");</script> 
+            </div>
         </div>
 
         <h2>Remaining gaps</h2>
