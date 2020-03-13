@@ -419,14 +419,14 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (2010)");
 
     svg.append("text")
       .attr("x", width-2)
       .attr("y", height-6)
       .attr("text-anchor", "end")
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1950)");
 
              // add diagonal line
@@ -490,7 +490,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1950)");
   
       });
@@ -508,7 +508,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1960)");
   
       });
@@ -526,7 +526,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1970)");
   
       });
@@ -544,7 +544,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1980)");
   
       });
@@ -562,7 +562,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (1990)");
   
       });
@@ -580,7 +580,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (2000)");
   
       });
@@ -598,7 +598,7 @@ function scatterPlot(datafile, div_section){
       .attr("id", "changing_text")
       .attr("x", 6)
       .attr("y", -2)
-      .attr("class", "label")
+      .attr("class", "labels")
       .text("Years of Education (2010)");
   
       });

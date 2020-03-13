@@ -20,9 +20,15 @@ var svg = d3.select("#theMap").append("svg")
 
 var colorScheme = d3.schemeReds[6];
     colorScheme.unshift("black")
-var color = d3.scaleThreshold()
+var colorNoEducation = d3.scaleThreshold()
     .domain([0, 5, 10, 20, 40, 60])
     .range(colorScheme);
+var colorNoSecondary = d3.scaleThreshold()
+    .domain([0, 20, 40, 60, 75, 90])
+    .range(colorScheme);
+var colorGenderGap = d3.scaleThreshold()
+    .domain([-30, 3, 6, 9, 15, 20])
+    .range(colorScheme)
 
 // Legend
 var g = svg.append("g")
@@ -35,11 +41,43 @@ g.append("text")
     .text("Population with no education");
 var labels = ['No data', '0-5%', '5-10%', '10-20%', '20-40%', '40-60%', '>60%'];
 var legend = d3.legendColor()
-    .labels(function (d) { return labels[d.i]; })
+    .labels(function (d) {
+        return labels[d.i];
+    })
     .shapePadding(4)
-    .scale(color);
+    .scale(colorNoEducation);
 svg.select(".legendThreshold")
     .call(legend);
+
+var noEducationLabels = {
+    0: "No data",
+    1: "0-5%",
+    2: "5-10%",
+    3: "10-20%",
+    4: "20-40%",
+    5: "40-60%",
+    6: ">60%"
+}
+
+var secondaryLabels = {
+    0: "No data",
+    1: "0-20%",
+    2: "20-40%",
+    3: "40-60%",
+    4: "60-75%",
+    5: "75-90%",
+    6: ">90%"
+}
+
+var genderGapLabels = {
+    0: "No data",
+    1: "< 3 pp",
+    2: "3-6 pp",
+    3: "6-9 pp",
+    4: "9-15 pp",
+    5: "15-20 pp",
+    6: ">20 pp"
+}
 
 var yearNow = 1950;
 
@@ -75,20 +113,49 @@ function update(value) {
     yearNow = value;
     d3.selectAll(".country")
     .attr("year", value)
-    .attr("fill", countryYearMatch);
+    .attr("fill", countryYearMatch)
+    .attr("percentage", percentage);
 }
 
 function updateFromDropdown(value) {
 	indicator = value;
 	d3.selectAll(".country")
-	.attr("indicator", value)
-	.attr("fill", countryYearMatch);
-	d3.selectAll(".caption").text(indicators_dict[value])
+	   .attr("indicator", value)
+	   .attr("fill", countryYearMatch)
+        .attr("percentage", percentage);
+	d3.selectAll(".caption")
+        .text(indicators_dict[value]);
+    d3.selectAll(".label")
+        .text(function(d, i) {
+            if (indicator == "no_education") {
+                return noEducationLabels[i];
+            } else if (indicator == "secondary_incomplete") {
+                return secondaryLabels[i];
+            } else if (indicator == "gap_female-male_no-education") {
+                return genderGapLabels[i];
+            } else {
+                return genderGapLabels[i]
+            }
+        });
+}
+
+function percentage(data, value) {
+    idYear = data.id.concat(yearNow).concat(indicator);
+    return educationByIdYearIndicator[idYear];
 }
 
 function countryYearMatch(data, value) {
     idYear = data.id.concat(yearNow).concat(indicator);
-    return color(educationByIdYearIndicator[idYear]);
+    perc = educationByIdYearIndicator[idYear];
+    if (indicator == "no_education") {
+        return colorNoEducation(perc);
+    } else if (indicator == "secondary_incomplete") {
+        return colorNoSecondary(perc);
+    } else if (indicator == "gap_female-male_no-education") {
+        return colorGenderGap(perc);
+    } else {
+        return colorGenderGap(perc);
+    }
 }
 
 function ready(error, world_map, education) {
@@ -97,8 +164,8 @@ function ready(error, world_map, education) {
     education.forEach(function(d) {
         idYearIndicator = d.id.concat(d.year).concat(d.indicator);
         educationByIdYearIndicator[idYearIndicator] = +d.percentage;
-    })
-          
+    });
+
     svg.append("g")
         .selectAll("path")
         .data(world_map.features)
@@ -107,16 +174,20 @@ function ready(error, world_map, education) {
         .attr("fill", function(d) {
             idYearIndicator = d.id.concat(yearNow).concat(indicator);
             if (idYearIndicator in educationByIdYearIndicator) {
-                return color(educationByIdYearIndicator[idYearIndicator]);
+                return colorNoEducation(educationByIdYearIndicator[idYearIndicator]);
             } else {
-                return "black"
+                return "black";
             }
         })
         .attr("stroke", "black")
         .attr("class", "country")
         .attr("year", yearNow)
         .attr("country_code", function(d) {
-        	return d.id
+        	return d.id;
         })
-        .attr("indicator", indicator);
+        .attr("indicator", indicator)
+        .attr("percentage", function(d) {
+            idYearIndicator = d.id.concat(yearNow).concat(indicator);
+            return educationByIdYearIndicator[idYearIndicator];
+        });
 }
