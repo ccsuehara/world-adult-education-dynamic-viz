@@ -45,7 +45,7 @@
 
         <p>There have been many significative changes like the shift in demographic trends: Adult population has almost tripled from 1950 to 2010: This means going from 1.3 billion people to almost 4 bilion. Proportionately, this also means much more educated people than before. Humanity may have never seen this size of educated people ever. Does this necessarily mean that there will be enough accumulated human capital to solve problems? Does this mean more agency for people? </p>
 
-        <div id="area_chart2"> 
+        <div id="area_chart2" class="plot">
         <script> area_graph("./data/graph_2.csv", 100, "Percentage of population in each education level", "area_chart2")</script>
         </div>
 
@@ -70,7 +70,7 @@
         <h2>Remaining gaps</h2>
         <p>Something about the remaining gaps...</p>
 
-        <div id="theMap">
+        <div id="mapGadgets">
           <div id="sliderContainer">
             <input id="timeslide" type="range" min="1950" max="2010" value="0" step="5"/><br>
             <span id="range">1950</span>
@@ -83,6 +83,8 @@
               <option value = "gap_female-male_secondary-incomplete">Gap female-male population with no secondary education</option>
             </select>
           </div>
+        </div>
+        <div id="map" class="plot">
           <script src="./src/app_map.js"></script>
         </div>
       
