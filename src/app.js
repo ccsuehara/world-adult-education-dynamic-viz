@@ -171,7 +171,15 @@ function area_graph(dataset, max_val, subtitle, div_section) {
     .data(stackedData)
     .enter()
     .append("path")
-      .attr("class", function(d) { return "myArea " + d.key })
+      //.attr("class", function(d) { return "myArea " + d.key })
+      .attr("class", div_section + "-" + "myArea")
+      .attr("id", function(d) {
+        if (d.key == "No Level") {
+          return div_section + "-NoLevel" //taking out the blankspace
+        } else {
+          return div_section + "-" + d.key
+        }
+      })
       .style("fill", function(d) { return color(d.key); })
       .attr("d", area)
 
@@ -214,20 +222,23 @@ function area_graph(dataset, max_val, subtitle, div_section) {
 
     // What to do when one group is hovered
     var highlight = function(d){
-      console.log(d)
       // reduce opacity of all groups
-      d3.selectAll(".myArea").style("opacity", .1)
+      d3.selectAll("." + div_section + "-" + "myArea").style("opacity", .1);
       // expect the one that is hovered
-      d3.select("."+d).style("opacity", 1)
+      if (d == "No Level") {
+          divThis = "#" + div_section + "-NoLevel";
+        } else {
+          divThis = "#" + div_section + "-" + d;
+        }
+      d3.select(divThis).style("opacity", 1);
     }
+    
 
     // And when it is not hovered anymore
     var noHighlight = function(d){
-      d3.selectAll(".myArea").style("opacity", 1)
+      d3.selectAll("." + div_section + "-" + "myArea").style("opacity", 1)
     }
    
-
-
     //////////
     // LEGEND //
     //////////
@@ -345,7 +356,7 @@ function scatterPlot(datafile, div_section){
                     var html  = d.country + "<br/>" +
                                  d['1950'] + "</b> in 1950 <b/>" + "<br/>" +
                                  d['2010'] + "</b> in 2010 <b/>"+ "<br/>" +
-                                 d['2010_p'] + "</b> (mill.) population 2010 <b/>"
+                                 d['2010_p'] + "</b> (thous.) adult population 2010 <b/>"
 
                     tooltip.html(html)
                         .style("left", (d3.event.pageX + 15) + "px")

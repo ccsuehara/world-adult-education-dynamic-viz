@@ -36,9 +36,10 @@ var g = svg.append("g")
     .attr("transform", "translate(20,20)");
 g.append("text")
     .attr("class", "caption")
-    .attr("x", 0)
-    .attr("y", -6)
-    .text("Population with no education");
+    .attr("x", -1)
+    .attr("y", -7)
+    .text("Population with no education attainment at all")
+    .style("font", "16px avenir");
 var labels = ['No data', '0-5%', '5-10%', '10-20%', '20-40%', '40-60%', '>60%'];
 var legend = d3.legendColor()
     .labels(function (d) {
@@ -47,7 +48,11 @@ var legend = d3.legendColor()
     .shapePadding(4)
     .scale(colorNoEducation);
 svg.select(".legendThreshold")
-    .call(legend);
+    .call(legend)
+    .style("font", "16px avenir");
+
+d3.selectAll(".label")
+    .style("font", "16px avenir");
 
 var noEducationLabels = {
     0: "No data",
@@ -84,10 +89,10 @@ var yearNow = 1950;
 var indicator = "no_education";
 
 var indicators_dict = {
-	"no_education": "Population with no education",
+	"no_education": "Population with no education attainment at all",
 	"secondary_incomplete": "Population with incomplete secondary education",
-	"gap_female-male_no-education": "Gap female-male population with no education",
-	"gap_female-male_secondary-incomplete": "Gap female-male population with no secondary education"
+	"gap_female-male_no-education": "Gap female-male - Population with no education attainment",
+	"gap_female-male_secondary-incomplete": "Gap female-male - Population with no secondary education"
 }
 
 var educationByIdYearIndicator = {};
@@ -167,6 +172,7 @@ function ready(error, world_map, education) {
     });
 
     svg.append("g")
+        .attr("transform", "translate(0,20)")
         .selectAll("path")
         .data(world_map.features)
         .enter().append("path")
