@@ -34,23 +34,24 @@
       <div class="articleText">
         <h4 class="introduction">The spotlight of education has usually been put on children's education. Nevertheless, the ones that are currently part of the workforce and delivering the productive needs of the economy are the current adult population. How well suited and prepared is this workforce? </h4>
 
-        <p>Education is the pilar for building the skills we will need in life. Although we really don't know yet what the future demands for skills will be, the basic set of skills will always come first. The world is currently in an education crisis, where going to school is not the same as learning. This is true for children who are curently in the school, but moreso, for adults who are part of the workforce and have, supposedly, consolidated their skills by then. This project aims to overview the education trends that have been achieved by the countries around the world, from 1950 to 2010. We will look at the evolution and the major gaps that are still missing. For this purpose, adult population is hereafter defined as population aged 25 or more.</p>
+        <p>Education is the pilar for building the skills we will need in life. Although we really don't know yet what the future demands for skills will be, the basic set of skills will always come first. The world is currently in an education crisis, where going to school is not the same as learning. This is true for children who are curently in the school, but moreso, for adults who are part of the workforce and have, supposedly, consolidated their skills by then. This project aims to overview the education trends that have been achieved by the countries around the world, from 1950 to 2010. We will look at the evolution and the major gaps that are still missing. For this purpose, adult population is hereafter defined as population aged 25 or more. All the data we used come from the <a href="http://www.barrolee.com/">Barro-Lee Educational Attainment Dataset</a>.
+</p>
 
         <h2 class = "first_part">Education levels in adult population</h2>
-        <p>In 1950, more than 50% of the world's adult population did not even start primary education, and less than 15% of them had an education level greater than primary. 60 years after, the panorama has changed: More than 60% of the world population has at least completed secondary. But is this enough? Tertiary education (also known as higher education) has increased only to mean a little more than 10% of the total population. More important, as we will look afterwards, is that the distribution of attainment is different depending on the place. </p>
+        <p>In 1950, more than 50% of the world's adult population did not even start primary education, and less than 15% of them had an education level greater than primary. 60 years after, the panorama has changed: More than 60% of the world's adult population has at least started secondary. But is this enough? Tertiary education (also known as higher education) has increased only to mean a little more than 10% of the total population. More important, as we will look afterwards, is that the distribution of attainment is different depending on the place. </p>
 
         <div id="area_chart"> 
-            <script> area_graph("./data/graph_1.csv", 4000000,"People in each education level (in thousands)", "area_chart");</script>
+            <script> area_graph("./data/graph_1.csv", 4000000,"Number of people who started or completed each education level (in thousands)", "area_chart");</script>
         </div>
 
         <p>There have been many significative changes like the shift in demographic trends: Adult population has almost tripled from 1950 to 2010: This means going from 1.3 billion people to almost 4 bilion. Proportionately, this also means much more educated people than before. Humanity had never seen this size of educated people ever. Does this necessarily mean that there will be enough accumulated human capital to solve the world's problems? Does this mean more agency and rights for more people? </p>
 
         <div id="area_chart2" class="plot">
-        <script> area_graph("./data/graph_2.csv", 100, "Percentage of population in each education level", "area_chart2");</script>
+        <script> area_graph("./data/graph_2.csv", 100, "Percentage of population who started or completed each education level", "area_chart2");</script>
         </div>
 
         <h2>The evolution of countries and regions</h2>
-        <p> All countries have univocally augmented their mean year of education. The biggest changes happened since the decade of 1980. (More to come).</p>
+        <p> All countries have univocally augmented their mean year of education. The biggest changes happened since the decade of 1980, especially in countries with large populations such as China and Russia. Regarding regions, East Asia and the Pacific, and Central Europe and Central Asia have had the biggest improvements. Countries from Sub-Saharan Africa, on the other hand, have only had modest increases compared to their initial situations, with the notable exception of Botswana.</p>
 
         <div id="scatter_chart">
             <div id = "AllButtons">
@@ -68,7 +69,8 @@
         </div>
 
         <h2>Remaining gaps</h2>
-        <p>Despite this progress</p>
+        <p>Despite this progress, there is still much to be done to close the remaining gaps in educational attainment. As noted previously, the advancement in education during the period 1960-2010 for countries of Sub-Saharan Africa has been slim. Even in 2010, there is a cluster of countries in the Sahel region with more than 60% of the population with no educational attainments. In terms of secondary education completion, the gap is universal access is largely significant: most countries still have more than 60% of the population with incomplete secondary education. </p>
+        <p>Education levels by gender also exhibit a pressing gap that has largely remained constant in Sub-Saharan Africa, North Africa and the Middle East, and South Asia; where most countries have a female-male gap of more than 15 percentage points (pp) in population with no education by gender. Importantly, the gender gap in secondary education completion has increased almost universally from 1960-2010, even in countries considered advanced economies like Canada or France. This stylized fact brings to light a complex issue countries face when seeking to achieve increased educational attainments: universal access to improved education levels usually benefits males first.</p>
 
         <div id="mapGadgets">
           <div id="sliderContainer">

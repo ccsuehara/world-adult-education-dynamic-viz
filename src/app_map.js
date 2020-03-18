@@ -24,7 +24,7 @@ var colorNoEducation = d3.scaleThreshold()
     .domain([0, 5, 10, 20, 40, 60])
     .range(colorScheme);
 var colorNoSecondary = d3.scaleThreshold()
-    .domain([0, 20, 40, 60, 75, 90])
+    .domain([0, 40, 50, 60, 70, 80])
     .range(colorScheme);
 var colorGenderGap = d3.scaleThreshold()
     .domain([-30, 3, 6, 9, 15, 20])
@@ -38,7 +38,7 @@ g.append("text")
     .attr("class", "caption")
     .attr("x", -1)
     .attr("y", -7)
-    .text("Population with no education attainment at all")
+    .text("Adult population with no education attainment at all")
     .style("font", "16px avenir");
 var labels = ['No data', '0-5%', '5-10%', '10-20%', '20-40%', '40-60%', '>60%'];
 var legend = d3.legendColor()
@@ -66,12 +66,12 @@ var noEducationLabels = {
 
 var secondaryLabels = {
     0: "No data",
-    1: "0-20%",
-    2: "20-40%",
-    3: "40-60%",
-    4: "60-75%",
-    5: "75-90%",
-    6: ">90%"
+    1: "0-40%",
+    2: "40-50%",
+    3: "50-60%",
+    4: "60-70%",
+    5: "70-80%",
+    6: ">80%"
 }
 
 var genderGapLabels = {
@@ -89,10 +89,10 @@ var yearNow = 1950;
 var indicator = "no_education";
 
 var indicators_dict = {
-	"no_education": "Population with no education attainment at all",
-	"secondary_incomplete": "Population with incomplete secondary education",
-	"gap_female-male_no-education": "Gap female-male - Population with no education attainment",
-	"gap_female-male_secondary-incomplete": "Gap female-male - Population with no secondary education"
+	"no_education": "Adult population with no education attainment at all",
+	"secondary_incomplete": "Adult population with incomplete secondary education",
+	"gap_female-male_no-education": "Gap female-male - Adult population with no education attainment (difference in percentage points)",
+	"gap_female-male_secondary-incomplete": "Gap female-male - Adult population with no secondary education (difference in percentage points)"
 }
 
 var educationByIdYearIndicator = {};
