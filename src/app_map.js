@@ -89,9 +89,9 @@ var yearNow = 1950;
 var indicator = "no_education";
 
 var indicators_dict = {
-	"no_education": "Adult population with no education attainment at all",
+	"no_education": "Adult population with no educational attainment at all",
 	"secondary_incomplete": "Adult population with incomplete secondary education",
-	"gap_female-male_no-education": "Gap female-male - Adult population with no education attainment (difference in percentage points)",
+	"gap_female-male_no-education": "Gap female-male - Adult population with no educational attainment (difference in percentage points)",
 	"gap_female-male_secondary-incomplete": "Gap female-male - Adult population with no secondary education (difference in percentage points)"
 }
 
